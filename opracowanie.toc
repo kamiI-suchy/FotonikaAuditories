@@ -36,4 +36,5 @@
 \contentsline {subsection}{\numberline {5.3}Bieg promienia w pryzmacie}{15}{subsection.5.3}%
 \contentsline {subsubsection}{\numberline {5.3.1}Kąt łamiący pryzmatu i odchylenie promienia}{15}{subsubsection.5.3.1}%
 \contentsline {subsubsection}{\numberline {5.3.2}Najmniejszy kąt odchylenia $\delta _{\min }$}{16}{subsubsection.5.3.2}%
-\contentsline {section}{\numberline {6}Zestawienie wszystkich wzorów}{17}{section.6}%
+\contentsline {subsection}{\numberline {5.4}Przykład: Rozszczepienie białego światła w pryzmacie}{16}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Zestawienie wszystkich wzorów}{18}{section.6}%

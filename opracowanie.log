@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.4.28)  28 APR 2026 12:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.4.28)  28 APR 2026 14:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -624,6 +624,10 @@ File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 zlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
 (/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplots.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
 Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
@@ -915,28 +919,28 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks48
 \@floatcapt=\box83
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 27.
+Package hyperref Info: Option `colorlinks' set `true' on input line 28.
  (./opracowanie.aux)
 \openout1 = `opracowanie.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -994,7 +998,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 61.
+Package hyperref Info: Link coloring ON on input line 62.
 
 (./opracowanie.out) (./opracowanie.out)
 \@outlinefile=\write4
@@ -1011,19 +1015,19 @@ File: translations-basic-dictionary-polish.trsl (polish translation file `trans
 lations-basic-dictionary')
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' f
-or `polish'. on input line 61.
+or `polish'. on input line 62.
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 6
-3.
+4.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 63.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 64.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 63.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 64.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1036,7 +1040,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout5 = `opracowanie.toc'.
 
  [2]
-Overfull \hbox (7.01964pt too wide) in paragraph at lines 72--75
+Overfull \hbox (7.01964pt too wide) in paragraph at lines 73--76
 \T1/cmr/m/n/12 niem wra»-li-wo-±ci ludz-kiego oka. Trzy klu-czowe wiel-ko-±ci t
 o: \T1/cmr/bx/n/12 ±wia-tªo±¢\T1/cmr/m/n/12 , \T1/cmr/bx/n/12 stru-mie« ±wietln
 y
@@ -1044,84 +1048,84 @@ y
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 77.
+(hyperref)                removing `math shift' on input line 78.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 77.
+(hyperref)                removing `math shift' on input line 78.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 109.
+(hyperref)                removing `math shift' on input line 110.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Phi' on input line 109.
+(hyperref)                removing `\Phi' on input line 110.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 109.
+(hyperref)                removing `math shift' on input line 110.
 
 [3]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 140.
+(hyperref)                removing `math shift' on input line 141.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 140.
+(hyperref)                removing `math shift' on input line 141.
 
 [4] [5
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.216 \newpage
+l.217 \newpage
               ] [6
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.306 \end{objasnbox}
+l.307 \end{objasnbox}
                      ]
-Package mdframed Info: Not enough space on this page on input line 306.
+Package mdframed Info: Not enough space on this page on input line 307.
  [7] [8
 pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.391 \newpage
+l.392 \newpage
               
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.391 \newpage
+l.392 \newpage
               ] [9]
-Package mdframed Info: Not enough space on this page on input line 473.
+Package mdframed Info: Not enough space on this page on input line 474.
  [10
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.523   \item P
+l.524   \item P
                romieÅ„ rÃ³wnolegÅ‚y do osi optycznej $\to$ po przejÅ›ciu prz...
 ] [11] [12] [13
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.663 \newpage
+l.664 \newpage
               ]
-Package mdframed Info: Not enough space on this page on input line 735.
+Package mdframed Info: Not enough space on this page on input line 736.
  [14
 pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.735 \end{wzorbox}
+l.736 \end{wzorbox}
                    ]
-Package mdframed Info: Not enough space on this page on input line 735.
+Package mdframed Info: Not enough space on this page on input line 736.
 
 
 ! LaTeX Error: Command \item invalid in math mode.
@@ -1130,7 +1134,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.742 ...                  (1\,nm $= 10^{-9}$\,m)}
+l.743 ...                  (1\,nm $= 10^{-9}$\,m)}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1142,7 +1146,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.742 ...                  (1\,nm $= 10^{-9}$\,m)}
+l.743 ...                  (1\,nm $= 10^{-9}$\,m)}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1154,7 +1158,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.742 ...                  (1\,nm $= 10^{-9}$\,m)}
+l.743 ...                  (1\,nm $= 10^{-9}$\,m)}
                                                   
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -1162,7 +1166,7 @@ If that doesn't work, type  X <return>  to quit.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.742 ...                  (1\,nm $= 10^{-9}$\,m)}
+l.743 ...                  (1\,nm $= 10^{-9}$\,m)}
                                                   
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1172,75 +1176,96 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.816 \end{objasnbox}
+l.817 \end{objasnbox}
                      ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 818.
+(hyperref)                removing `math shift' on input line 819.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\delta' on input line 818.
+(hyperref)                removing `\delta' on input line 819.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 818.
+(hyperref)                removing `subscript' on input line 819.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\min' on input line 818.
+(hyperref)                removing `\min' on input line 819.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 818.
+(hyperref)                removing `math shift' on input line 819.
 
-[16] [17
+[16]
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 989.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 989.
+
+Missing character: There is no ° in font cmr12!
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 989.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 989.
+
+Missing character: There is no ° in font cmr12!
+[17
+pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
+s been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1024 
+       ] [18
 pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.879 \end{document}
-                    ] (./opracowanie.aux)
+l.1025 \end{document}
+                     ] (./opracowanie.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `opracowanie.out' has not changed.
-(rerunfilecheck)             Checksum: 8422D44985AB1BBCA13774F85E07F2BC;7971.
+(rerunfilecheck)             Checksum: 3D5FC0681A2D95E4A041E4D4A04303D1;8316.
  ) 
 Here is how much of TeX's memory you used:
- 37490 strings out of 476074
- 893658 string characters out of 5793137
+ 37684 strings out of 476074
+ 897194 string characters out of 5793137
  1943975 words of memory out of 5000000
- 58849 multiletter control sequences out of 15000+600000
- 574696 words of font info for 79 fonts, out of 8000000 for 9000
+ 59035 multiletter control sequences out of 15000+600000
+ 577013 words of font info for 86 fonts, out of 8000000 for 9000
  79 hyphenation exceptions out of 8191
  102i,11n,107p,732b,1074s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/runner/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcbx1200.60
-0pk> </home/runner/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.
-600pk> </home/runner/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm120
-0.600pk> </home/runner/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1
-440.600pk> </home/runner/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecr
+ </home/runner/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.60
+0pk> </home/runner/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.
+600pk> </home/runner/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcbx120
+0.600pk> </home/runner/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1
+200.600pk> </home/runner/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/tcr
 m1200.600pk> </home/runner/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec/e
-cbx1200.600pk> </home/runner/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec
-/ecbx1728.600pk> </home/runner/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/
-ec/ectt1440.600pk> </home/runner/.texlive2023/texmf-var/fonts/pk/ljfour/jknappe
-n/ec/ecrm1440.600pk> </home/runner/.texlive2023/texmf-var/fonts/pk/ljfour/jknap
-pen/ec/ecbx2074.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on opracowanie.pdf (17 pages, 214756 bytes).
+cbx1440.600pk> </home/runner/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/ec
+/ecrm1200.600pk> </home/runner/.texlive2023/texmf-var/fonts/pk/ljfour/jknappen/
+ec/ecbx1200.600pk> </home/runner/.texlive2023/texmf-var/fonts/pk/ljfour/jknappe
+n/ec/ecbx1728.600pk> </home/runner/.texlive2023/texmf-var/fonts/pk/ljfour/jknap
+pen/ec/ectt1440.600pk> </home/runner/.texlive2023/texmf-var/fonts/pk/ljfour/jkn
+appen/ec/ecrm1440.600pk> </home/runner/.texlive2023/texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecbx2074.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on opracowanie.pdf (18 pages, 243452 bytes).
 PDF statistics:
- 722 PDF objects out of 1000 (max. 8388607)
- 391 compressed objects within 4 object streams
- 100 named destinations out of 1000 (max. 500000)
- 309 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 774 PDF objects out of 1000 (max. 8388607)
+ 417 compressed objects within 5 object streams
+ 104 named destinations out of 1000 (max. 500000)
+ 317 words of extra memory for PDF output out of 10000 (max. 10000000)
 

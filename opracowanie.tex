@@ -10,6 +10,7 @@
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{tikz}
+\usetikzlibrary{calc}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepackage{siunitx}
@@ -845,6 +846,150 @@ Przy małych kątach łamiących ($\varphi \ll 1$) wzór upraszcza się:
 \end{equation}
 
 % ====================================================================
+\subsection{Przykład: Rozszczepienie białego światła w pryzmacie}
+% ====================================================================
+
+\textbf{Dane:}
+\begin{itemize}[leftmargin=2em]
+  \item $n_{\mathrm{cz}} = 1{,}52$ \quad (współczynnik załamania dla światła \textcolor{red}{czerwonego})
+  \item $n_{\mathrm{n}}  = 1{,}54$ \quad (współczynnik załamania dla światła \textcolor{blue}{niebieskiego})
+  \item $\theta_1 = 20^\circ$ \quad (kąt padania na pierwszą powierzchnię pryzmatu)
+  \item $\varphi  = 66^\circ$ \quad (kąt łamiący pryzmatu)
+\end{itemize}
+
+\medskip
+\textbf{Szukamy:} różnicy kątów odchylenia $\Delta\delta = \delta_{\mathrm{n}} - \delta_{\mathrm{cz}}$.
+
+\medskip
+\textbf{Krok 1 -- Prawo Snella na pierwszej powierzchni}
+
+\begin{equation*}
+  \sin\theta_1 = n \sin\theta_1'
+  \quad\Longrightarrow\quad
+  \theta_1' = \arcsin\!\left(\frac{\sin\theta_1}{n}\right)
+\end{equation*}
+
+\begin{itemize}[leftmargin=2em]
+  \item Czerwone: $\theta_{1,\mathrm{cz}}' = \arcsin\!\left(\dfrac{\sin 20^\circ}{1{,}52}\right)
+        = \arcsin(0{,}2250) \approx 13{,}0^\circ$
+  \item Niebieskie: $\theta_{1,\mathrm{n}}' = \arcsin\!\left(\dfrac{\sin 20^\circ}{1{,}54}\right)
+        = \arcsin(0{,}2221) \approx 12{,}8^\circ$
+\end{itemize}
+
+\medskip
+\textbf{Krok 2 -- Kąt padania na drugą powierzchnię}
+
+Z warunku geometrycznego $\theta_1' + \theta_2 = \varphi$:
+
+\begin{itemize}[leftmargin=2em]
+  \item Czerwone: $\theta_{2,\mathrm{cz}} = 66^\circ - 13{,}0^\circ = 53{,}0^\circ$
+  \item Niebieskie: $\theta_{2,\mathrm{n}}  = 66^\circ - 12{,}8^\circ = 53{,}2^\circ$
+\end{itemize}
+
+\medskip
+\textbf{Krok 3 -- Sprawdzenie kąta granicznego całkowitego wewnętrznego odbicia}
+
+Kąt graniczny dla obu barw:
+\begin{equation*}
+  \theta_c = \arcsin\!\left(\frac{1}{n}\right)
+\end{equation*}
+\begin{itemize}[leftmargin=2em]
+  \item Czerwone: $\theta_{c,\mathrm{cz}} = \arcsin(1/1{,}52) \approx 41{,}1^\circ$
+  \item Niebieskie: $\theta_{c,\mathrm{n}} = \arcsin(1/1{,}54) \approx 40{,}5^\circ$
+\end{itemize}
+
+Ponieważ $\theta_{2,\mathrm{cz}} = 53{,}0^\circ > \theta_{c,\mathrm{cz}} = 41{,}1^\circ$ (analogicznie dla
+niebieskiego), na drugiej powierzchni zachodzi \textbf{całkowite wewnętrzne odbicie} --
+promień przy takim kącie padania nie wychodzi z pryzmatu drugą ścianką.
+
+\medskip
+\textbf{Krok 4 -- Obliczenie różnicy kątów odchylenia (przybliżenie cienkiego pryzmatu)}
+
+Dla pryzmatów z dyspersją chromatyczną stosuje się wzór różnicowy (niezależny od
+konkretnego kąta padania):
+\begin{wzorbox}
+\begin{equation}
+  \Delta\delta = \delta_{\mathrm{n}} - \delta_{\mathrm{cz}}
+             = (n_{\mathrm{n}} - n_{\mathrm{cz}})\,\varphi
+  \label{eq:roznica_odchylenia}
+\end{equation}
+\end{wzorbox}
+
+Podstawiając dane:
+\begin{equation*}
+  \Delta\delta = (1{,}54 - 1{,}52)\cdot 66^\circ
+              = 0{,}02 \times 66^\circ
+              \approx \boxed{1{,}32^\circ}
+\end{equation*}
+
+Światło niebieskie odchyla się od pierwotnego kierunku o $\approx 1{,}32^\circ$ \emph{więcej} niż
+światło czerwone.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.3,>=stealth]
+
+  % --- Prism ---
+  \coordinate (A) at (1.5, 2.8);   % apex
+  \coordinate (B) at (0,   0);     % bottom-left
+  \coordinate (C) at (3,   0);     % bottom-right
+  \draw[thick, fill=cyan!12] (B) -- (C) -- (A) -- cycle;
+
+  % apex angle label
+  \node[above=2pt] at (A) {$A$};
+  \node[above right=2pt] at ($(A)+(0,-0.45)$) {$\varphi{=}66^\circ$};
+
+  % --- Surface normals (dashed) ---
+  % left face normal at entry point P1
+  \coordinate (P1) at (0.72, 1.24);   % point on left face
+  % normal direction: perpendicular to left face outward
+  % left face goes from B=(0,0) to A=(1.5,2.8); direction (1.5,2.8), perp = (2.8,-1.5) normalised
+  \pgfmathsetmacro{\nxa}{2.8/3.162}
+  \pgfmathsetmacro{\nya}{-1.5/3.162}
+  \draw[dashed,gray] ($(P1)+(-0.7*\nxa,-0.7*\nya)$) -- ($(P1)+(0.9*\nxa,0.9*\nya)$);
+
+  % right face normal at exit point P2
+  \coordinate (P2) at (2.28, 1.24);  % symmetric point on right face
+  % right face goes from A=(1.5,2.8) to C=(3,0); direction (1.5,-2.8), perp = (2.8,1.5)/3.162
+  \pgfmathsetmacro{\nxb}{2.8/3.162}
+  \pgfmathsetmacro{\nyb}{1.5/3.162}
+  \draw[dashed,gray] ($(P2)+(-0.7*\nxb,-0.7*\nyb)$) -- ($(P2)+(0.9*\nxb,0.9*\nyb)$);
+
+  % --- Incident white ray ---
+  \draw[white!60!gray, line width=2pt, ->] (-0.9,2.35) -- (P1)
+        node[midway,above left,black,font=\small]{białe};
+
+  % --- Ray inside prism (middle path) ---
+  \draw[white!40!gray, line width=1.5pt] (P1) -- (P2);
+
+  % --- Exiting rays: red and blue ---
+  \draw[red,   very thick, ->] (P2) -- ($(P2)+(1.5,-0.55)$)
+        node[right,font=\small]{$\delta_{\mathrm{cz}}$};
+  \draw[blue,  very thick, ->] (P2) -- ($(P2)+(1.5,-0.78)$)
+        node[right,font=\small]{$\delta_{\mathrm{n}}$};
+
+  % --- Undeviated reference line ---
+  \draw[dashed,gray!70, ->] (P1) -- ($(P2)+(1.5,-0.15)$)
+        node[right,font=\tiny,gray]{kierunek nieugięty};
+
+  % --- Angle labels inside ---
+  \node[font=\small] at (0.42, 1.55) {$\theta_1$};
+  \node[font=\small] at (0.95, 1.10) {$\theta_1'$};
+  \node[font=\small] at (2.02, 1.10) {$\theta_2$};
+  \node[font=\small] at (2.55, 1.55) {$\theta_2'$};
+
+  % --- Delta difference brace ---
+  \draw[<->, thick, black!70]
+        ($(P2)+(1.5,-0.55)+(0.25,0)$) -- ($(P2)+(1.5,-0.78)+(0.25,0)$)
+        node[midway,right,font=\small]{$\Delta\delta{=}1{,}32^\circ$};
+
+\end{tikzpicture}
+\caption{Rozszczepienie białego światła w pryzmacie szklnym
+         ($n_{\mathrm{cz}}{=}1{,}52$, $n_{\mathrm{n}}{=}1{,}54$, $\varphi{=}66°$).
+         Niebieskie (krótsze fale) odchyla się bardziej niż czerwone.}
+\end{figure}
+
+% ====================================================================
 \section{Zestawienie wszystkich wzorów}
 % ====================================================================
 
@@ -871,6 +1016,7 @@ Kąt graniczny               & $\sin\theta_c = n_2/n_1$ & \eqref{eq:kat_graniczn
 Prędkość fali               & $c = \lambda\nu$    & \eqref{eq:predkosc_fali} \\
 Odchylenie w pryzmacie      & $\delta = (\theta_1+\theta_2')-\varphi$ & \eqref{eq:odchylenie_pryzmatu} \\
 Min. odchylenie w pryzmacie & $n_p = \sin((\varphi+\delta_{\min})/2)/\sin(\varphi/2)$ & \eqref{eq:min_odchylenie} \\
+Różnica odchyleń (dyspersja) & $\Delta\delta = (n_{\mathrm{n}}-n_{\mathrm{cz}})\,\varphi$ & \eqref{eq:roznica_odchylenia} \\
 \bottomrule
 \end{tabular}
 \caption{Zestawienie wzorów kolokwialnych}
