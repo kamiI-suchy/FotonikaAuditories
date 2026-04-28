@@ -1,0 +1,879 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{siunitx}
+\sisetup{locale=DE}
+\usepackage{mdframed}
+\usepackage{enumitem}
+\usepackage{float}
+
+\geometry{margin=2.5cm}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    urlcolor=blue!70!black,
+}
+
+% ---- custom environments ----
+\newmdenv[
+  backgroundcolor=blue!6,
+  linecolor=blue!50,
+  linewidth=1.2pt,
+  roundcorner=5pt,
+  skipabove=6pt,
+  skipbelow=6pt,
+]{wzorbox}
+
+\newmdenv[
+  backgroundcolor=green!6,
+  linecolor=green!50,
+  linewidth=1.2pt,
+  roundcorner=5pt,
+  skipabove=6pt,
+  skipbelow=6pt,
+]{objasnbox}
+
+% ---- helpers ----
+\newcommand{\jednostka}[1]{\textbf{#1}}
+\newcommand{\oznaczenie}[2]{%
+  \item $#1$ -- #2%
+}
+
+% ====================================================================
+\title{\textbf{Fotonika -- opracowanie zagadnień kolokwialnych}\\[4pt]
+       \large Na podstawie pliku \texttt{wymagania.md}}
+\author{}
+\date{\today}
+% ====================================================================
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+% ====================================================================
+\section{Fotometria}
+% ====================================================================
+
+\subsection{Podstawowe pojęcia fotometryczne}
+
+Fotometria zajmuje się pomiarami promieniowania elektromagnetycznego z uwzględnieniem
+wrażliwości ludzkiego oka.  Trzy kluczowe wielkości to:
+\textbf{światłość}, \textbf{strumień świetlny} i \textbf{natężenie oświetlenia}.
+
+% ------- Światłość --------------------------------------------------
+\subsubsection{Światłość $I$}
+
+Światłość opisuje, ile strumienia świetlnego źródło emituje w danym kierunku
+na jednostkę kąta bryłowego.
+
+\begin{wzorbox}
+\begin{equation}
+  I = \frac{d\Phi}{d\Omega}
+  \label{eq:swiatlosc}
+\end{equation}
+\end{wzorbox}
+
+\begin{objasnbox}
+\textbf{Objaśnienie symboli:}
+\begin{itemize}[leftmargin=2em]
+  \oznaczenie{I}{Światłość \quad [\textbf{cd}] -- kandela (jednostka podstawowa SI)}
+  \oznaczenie{d\Phi}{nieskończenie mały strumień świetlny emitowany w stożek
+                    \quad [\textbf{lm}] -- lumen}
+  \oznaczenie{d\Omega}{nieskończenie mały kąt bryłowy,
+                    $\Omega = A/r^2$ dla powierzchni $A$ w odległości $r$
+                    \quad [\textbf{sr}] -- steradian}
+\end{itemize}
+\end{objasnbox}
+
+Dla źródła \emph{izotropowego} (emitującego równomiernie we wszystkich kierunkach)
+całkowity kąt bryłowy to $\Omega = 4\pi\,\si{sr}$, więc:
+\begin{equation}
+  I = \frac{\Phi}{4\pi}
+  \label{eq:swiatlosc_izotropowe}
+\end{equation}
+
+% ------- Strumień świetlny ------------------------------------------
+\subsubsection{Strumień świetlny $\Phi$}
+
+Strumień świetlny jest miarą całkowitej mocy promieniowania odczuwanej
+przez ludzkie oko -- uwzględnia krzywą czułości widmowej oka $V(\lambda)$.
+
+\begin{wzorbox}
+\begin{equation}
+  \Phi = K_m \int_{0}^{\infty} \Phi_e(\lambda)\, V(\lambda)\, d\lambda
+  \label{eq:strumien}
+\end{equation}
+\end{wzorbox}
+
+\begin{objasnbox}
+\textbf{Objaśnienie symboli:}
+\begin{itemize}[leftmargin=2em]
+  \oznaczenie{\Phi}{Strumień świetlny \quad [\textbf{lm}] -- lumen}
+  \oznaczenie{K_m}{Maksymalna skuteczność świetlna $\approx 683\,\si{lm/W}$ przy
+                   $\lambda = 555\,\si{nm}$}
+  \oznaczenie{\Phi_e(\lambda)}{Spektralna gęstość mocy (strumień energetyczny)
+                   \quad [\textbf{W/nm}]}
+  \oznaczenie{V(\lambda)}{Krzywa widzialności oka (bezwymiarowa, $0\leq V \leq 1$)}
+  \oznaczenie{\lambda}{Długość fali \quad [\textbf{m}] lub praktycznie [\textbf{nm}]}
+\end{itemize}
+\end{objasnbox}
+
+Upraszczając: dla źródła o mocy promieniowania $P$ i skuteczności świetlnej $\eta$:
+\begin{equation}
+  \Phi = \eta \cdot P
+\end{equation}
+
+% ------- Natężenie oświetlenia --------------------------------------
+\subsubsection{Natężenie oświetlenia $E$}
+
+Natężenie oświetlenia (iluminancja) określa, ile strumienia świetlnego
+pada na jednostkę powierzchni oświetlanego obiektu.
+
+\begin{wzorbox}
+\begin{equation}
+  E = \frac{d\Phi}{dA}
+  \label{eq:natezenie}
+\end{equation}
+\end{wzorbox}
+
+\begin{objasnbox}
+\textbf{Objaśnienie symboli:}
+\begin{itemize}[leftmargin=2em]
+  \oznaczenie{E}{Natężenie oświetlenia \quad [\textbf{lx}] -- luks $= \si{lm/m^2}$}
+  \oznaczenie{d\Phi}{Strumień świetlny padający na element powierzchni \quad [\textbf{lm}]}
+  \oznaczenie{dA}{Element powierzchni \quad [\textbf{m}$^2$]}
+\end{itemize}
+\end{objasnbox}
+
+% ------- Relacje ----------------------------------------------------
+\subsubsection{Relacje między wielkościami fotometrycznymi}
+
+Dla \textbf{punktowego źródła światła} o światłości $I$ natężenie oświetlenia
+powierzchni prostopadłej do promienia, w odległości $r$, wynosi:
+
+\begin{wzorbox}
+\begin{equation}
+  E = \frac{I}{r^2}
+  \label{eq:prawo_odwrotnych_kwadratow}
+\end{equation}
+\end{wzorbox}
+
+Jest to \textbf{prawo odwrotnych kwadratów} -- oświetlenie maleje z kwadratem
+odległości od źródła.
+
+Gdy oświetlana powierzchnia jest nachylona pod kątem $\alpha$ do promienia
+(kąt padania $\theta$ do normalnej powierzchni $\theta = 90^\circ - \alpha$):
+
+\begin{wzorbox}
+\begin{equation}
+  E = \frac{I \cos\theta}{r^2}
+  \label{eq:lambert}
+\end{equation}
+\end{wzorbox}
+
+\begin{objasnbox}
+\textbf{Objaśnienie symboli:}
+\begin{itemize}[leftmargin=2em]
+  \oznaczenie{E}{Natężenie oświetlenia \quad [\textbf{lx}]}
+  \oznaczenie{I}{Światłość źródła \quad [\textbf{cd}]}
+  \oznaczenie{r}{Odległość od źródła do powierzchni \quad [\textbf{m}]}
+  \oznaczenie{\theta}{Kąt między promieniem a normalną do powierzchni
+                      \quad [\textbf{rad}] lub [\textbf{°}]}
+\end{itemize}
+\end{objasnbox}
+
+\paragraph{Zestawienie jednostek fotometrycznych:}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{lll}
+\toprule
+\textbf{Wielkość} & \textbf{Symbol} & \textbf{Jednostka SI} \\
+\midrule
+Światłość        & $I$      & kandela [\textbf{cd}]   \\
+Strumień świetlny & $\Phi$  & lumen [\textbf{lm}] $=$ cd$\cdot$sr \\
+Natężenie oświetlenia & $E$ & luks [\textbf{lx}] $=$ lm/m$^2$ \\
+Luminancja       & $L$      & [\textbf{cd/m}$^2$]     \\
+\bottomrule
+\end{tabular}
+\caption{Podstawowe wielkości fotometryczne}
+\end{table}
+
+\newpage
+% ====================================================================
+\section{Zwierciadła płaskie i sferyczne}
+% ====================================================================
+
+\subsection{Zwierciadło płaskie}
+
+Zwierciadło płaskie tworzy obraz \textbf{pozorny}, \textbf{prosty} i tej samej
+wielkości co przedmiot.  Obraz leży symetrycznie za zwierciadłem.
+
+\begin{itemize}
+  \item Odległość obrazu za zwierciadłem = odległość przedmiotu przed zwierciadłem.
+  \item Obraz jest \emph{lustrzanym odbiciem} (lateralne odwrócenie).
+\end{itemize}
+
+\subsubsection{Konstrukcja graficzna -- zwierciadło płaskie}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=0.9]
+  % Mirror
+  \draw[thick] (0,-2.5) -- (0,2.5);
+  \foreach \y in {-2.2,-1.8,...,2.2}
+    \draw[gray!60] (0,\y) -- (-0.25,\y-0.25);
+  % Object
+  \draw[blue,thick,->] (2,0) -- (2,1.5) node[right]{$A$};
+  \filldraw[blue] (2,0) circle (2pt) node[below right]{$B$};
+  % Image (dashed)
+  \draw[blue!40,dashed,->] (-2,0) -- (-2,1.5) node[left]{$A'$};
+  \filldraw[blue!40] (-2,0) circle (2pt) node[below left]{$B'$};
+  % Rays from A
+  \draw[orange,->] (2,1.5) -- (0,1.5) -- (-0.5,2.8);
+  \draw[orange,dashed] (0,1.5) -- (-2,1.5);
+  \draw[orange,->] (2,1.5) -- (0,0.5) -- (-1.5,0.5);
+  \draw[orange,dashed] (0,0.5) -- (-2,1.5);
+  % Labels
+  \node[below] at (1,0) {$d$};
+  \node[below] at (-1,0) {$d'$};
+  \draw[<->] (0,-0.3) -- (2,-0.3) node[midway,below]{$d$};
+  \draw[<->] (0,-0.3) -- (-2,-0.3) node[midway,below]{$d'=d$};
+\end{tikzpicture}
+\caption{Powstawanie obrazu w zwierciadle płaskim. Przerywane linie -- przedłużenia
+         promieni odbitych (obraz pozorny).}
+\end{figure}
+
+\subsection{Zwierciadło sferyczne}
+
+\subsubsection{Ognisko i ogniskowa}
+
+Zwierciadło sferyczne ma \textbf{środek krzywizny} $C$ i \textbf{ognisko} $F$
+(dla zwierciadła wklęsłego -- rzeczywiste; dla wypukłego -- pozorne).
+
+\begin{wzorbox}
+\begin{equation}
+  f = \frac{R}{2}
+  \label{eq:ogniskowa_zwierciadla}
+\end{equation}
+\end{wzorbox}
+
+\begin{objasnbox}
+\textbf{Objaśnienie symboli:}
+\begin{itemize}[leftmargin=2em]
+  \oznaczenie{f}{Ogniskowa zwierciadła \quad [\textbf{m}]}
+  \oznaczenie{R}{Promień krzywizny zwierciadła \quad [\textbf{m}]}
+\end{itemize}
+\textbf{Konwencja znaków:} ogniskowa wklęsłego $f>0$, wypukłego $f<0$.
+\end{objasnbox}
+
+\subsubsection{Równanie zwierciadła}
+
+\begin{wzorbox}
+\begin{equation}
+  \frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}
+  \label{eq:zwierciadlo}
+\end{equation}
+\end{wzorbox}
+
+\begin{objasnbox}
+\textbf{Objaśnienie symboli:}
+\begin{itemize}[leftmargin=2em]
+  \oznaczenie{f}{Ogniskowa zwierciadła \quad [\textbf{m}]}
+  \oznaczenie{d_o}{Odległość \textbf{przedmiotu} od zwierciadła \quad [\textbf{m}]}
+  \oznaczenie{d_i}{Odległość \textbf{obrazu} od zwierciadła \quad [\textbf{m}]}
+\end{itemize}
+\textbf{Konwencja znaków (kartezjańska):}
+\begin{itemize}
+  \item $d_o > 0$ -- przedmiot przed zwierciadłem (rzeczywisty)
+  \item $d_i > 0$ -- obraz przed zwierciadłem (rzeczywisty)
+  \item $d_i < 0$ -- obraz za zwierciadłem (pozorny)
+\end{itemize}
+\end{objasnbox}
+
+\subsubsection{Powiększenie obrazu}
+
+\begin{wzorbox}
+\begin{equation}
+  m = -\frac{d_i}{d_o} = \frac{h_i}{h_o}
+  \label{eq:powiekszenie_zwierciadlo}
+\end{equation}
+\end{wzorbox}
+
+\begin{objasnbox}
+\textbf{Objaśnienie symboli:}
+\begin{itemize}[leftmargin=2em]
+  \oznaczenie{m}{Powiększenie liniowe (bezwymiarowe)}
+  \oznaczenie{d_i}{Odległość obrazu od zwierciadła \quad [\textbf{m}]}
+  \oznaczenie{d_o}{Odległość przedmiotu od zwierciadła \quad [\textbf{m}]}
+  \oznaczenie{h_i}{Wysokość obrazu \quad [\textbf{m}]}
+  \oznaczenie{h_o}{Wysokość przedmiotu \quad [\textbf{m}]}
+\end{itemize}
+\textbf{Interpretacja:}
+\begin{itemize}
+  \item $|m|>1$ -- obraz powiększony
+  \item $|m|<1$ -- obraz pomniejszony
+  \item $m>0$   -- obraz prosty
+  \item $m<0$   -- obraz odwrócony
+\end{itemize}
+\end{objasnbox}
+
+\subsubsection{Obrazy w zwierciadle wklęsłym -- podsumowanie}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{lll}
+\toprule
+\textbf{Położenie przedmiotu} & \textbf{Charakter obrazu} & \textbf{Powiększenie} \\
+\midrule
+$d_o > 2f$ & rzeczywisty, odwrócony & $|m|<1$ \\
+$d_o = 2f$ & rzeczywisty, odwrócony & $|m|=1$ \\
+$f < d_o < 2f$ & rzeczywisty, odwrócony & $|m|>1$ \\
+$d_o = f$ & obraz w nieskończoności & --- \\
+$d_o < f$ & pozorny, prosty & $|m|>1$ \\
+\bottomrule
+\end{tabular}
+\caption{Obrazy w zwierciadle wklęsłym}
+\end{table}
+
+\subsubsection{Konstrukcja graficzna -- zwierciadło sferyczne}
+
+Stosuje się trzy \textbf{promienie pomocnicze}:
+\begin{enumerate}
+  \item Promień równoległy do osi optycznej $\to$ po odbiciu przechodzi przez ognisko $F$.
+  \item Promień przez ognisko $F$ $\to$ po odbiciu biegnie równolegle do osi.
+  \item Promień przez środek krzywizny $C$ $\to$ odbija się wzdłuż siebie.
+\end{enumerate}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.0]
+  % Axis
+  \draw[->] (-5,0) -- (2,0) node[right]{oś opt.};
+  % Mirror (parabolic approximation)
+  \draw[thick,blue!70] plot[domain=-2:2,samples=40] ({-0.15*\x*\x},\x);
+  % Focal point and centre
+  \filldraw[red] (-1,0) circle (2pt) node[below]{$F$};
+  \filldraw[red] (-2,0) circle (2pt) node[below]{$C$};
+  \node[right] at (0,0) {$V$};
+  % Object
+  \draw[thick,green!60!black,->] (-3.5,0) -- (-3.5,1.2) node[above]{$P$};
+  % Ray 1: parallel to axis -> through F
+  \draw[orange,->] (-3.5,1.2) -- (0,1.2);
+  \draw[orange,->] (0,1.2) -- (-1.8,-1.0);
+  % Ray 2: through C -> reflects back
+  \draw[purple,->] (-3.5,1.2) -- (-0.06,0.2);
+  \draw[purple,->] (-0.06,0.2) -- (-3.5,1.2) +(-3.5+0.06, 1.2-0.2);
+  % Better: ray through F then parallel
+  \draw[cyan,->] (-3.5,1.2) -- (-0.04,0.65);
+  \draw[cyan,->] (-0.04,0.65) -- (-2.5,-0.8);
+  % Image label
+  \node[below right, green!60!black] at (-2,-0.35) {obraz $P'$};
+\end{tikzpicture}
+\caption{Szkic konstrukcji obrazu w zwierciadle wklęsłym (schemat poglądowy).}
+\end{figure}
+
+\newpage
+% ====================================================================
+\section{Soczewki}
+% ====================================================================
+
+\subsection{Soczewki skupiające i rozpraszające}
+
+\begin{itemize}
+  \item \textbf{Soczewka skupiająca (wypukła)} -- grubsza w środku; ognisko
+        \emph{rzeczywiste} (po stronie obrazu); $f>0$.
+  \item \textbf{Soczewka rozpraszająca (wklęsła)} -- grubsza na brzegach; ognisko
+        \emph{pozorne} (po tej samej stronie co przedmiot); $f<0$.
+\end{itemize}
+
+\subsubsection{Ognisko i ogniskowa soczewki}
+
+Ogniskowa $f$ soczewki skupiającej to odległość, w jakiej zbiega się wiązka promieni
+równoległych do osi optycznej po przejściu przez soczewkę.
+
+\subsubsection{Równanie soczewki cienkiej}
+
+\begin{wzorbox}
+\begin{equation}
+  \frac{1}{f} = \frac{1}{d_o} + \frac{1}{d_i}
+  \label{eq:soczewka_cienka}
+\end{equation}
+\end{wzorbox}
+
+\begin{objasnbox}
+\textbf{Objaśnienie symboli:}
+\begin{itemize}[leftmargin=2em]
+  \oznaczenie{f}{Ogniskowa soczewki \quad [\textbf{m}]; dla skupiającej $f>0$,
+                dla rozpraszającej $f<0$}
+  \oznaczenie{d_o}{Odległość przedmiotu od soczewki \quad [\textbf{m}]; $d_o>0$
+                po lewej stronie soczewki}
+  \oznaczenie{d_i}{Odległość obrazu od soczewki \quad [\textbf{m}]; $d_i>0$
+                obraz rzeczywisty (po prawej), $d_i<0$ obraz pozorny (po lewej)}
+\end{itemize}
+\end{objasnbox}
+
+\subsubsection{Zdolność skupiająca soczewki}
+
+Często posługujemy się zdolnością skupiającą (mocą) soczewki:
+\begin{wzorbox}
+\begin{equation}
+  D = \frac{1}{f}
+  \label{eq:zdolnosc_skupiajaca}
+\end{equation}
+\end{wzorbox}
+
+\begin{objasnbox}
+\textbf{Objaśnienie symboli:}
+\begin{itemize}[leftmargin=2em]
+  \oznaczenie{D}{Zdolność skupiająca \quad [\textbf{dioptria, D}] $= \si{m^{-1}}$}
+  \oznaczenie{f}{Ogniskowa \quad [\textbf{m}]}
+\end{itemize}
+\end{objasnbox}
+
+\subsubsection{Równanie szlifierzy soczewek (soczewki rzeczywiste)}
+
+Dla soczewki z materiału o współczynniku załamania $n_L$ zanurzonej
+w ośrodku o współczynniku $n_0$:
+
+\begin{wzorbox}
+\begin{equation}
+  \frac{1}{f} = \left(\frac{n_L}{n_0} - 1\right)
+                \left(\frac{1}{R_1} - \frac{1}{R_2}\right)
+  \label{eq:szlifierzy}
+\end{equation}
+\end{wzorbox}
+
+\begin{objasnbox}
+\textbf{Objaśnienie symboli:}
+\begin{itemize}[leftmargin=2em]
+  \oznaczenie{f}{Ogniskowa soczewki \quad [\textbf{m}]}
+  \oznaczenie{n_L}{Współczynnik załamania materiału soczewki (bezwymiarowy)}
+  \oznaczenie{n_0}{Współczynnik załamania ośrodka otaczającego (dla powietrza $n_0\approx1$)}
+  \oznaczenie{R_1}{Promień krzywizny pierwszej powierzchni soczewki \quad [\textbf{m}];\\
+               $R_1>0$ -- środek krzywizny po prawej stronie}
+  \oznaczenie{R_2}{Promień krzywizny drugiej powierzchni soczewki \quad [\textbf{m}];\\
+               $R_2<0$ -- środek krzywizny po lewej stronie (typowe dla bikonweksowej)}
+\end{itemize}
+\end{objasnbox}
+
+Dla powietrza ($n_0=1$) wzór upraszcza się do:
+\begin{equation}
+  \frac{1}{f} = (n_L - 1)\left(\frac{1}{R_1} - \frac{1}{R_2}\right)
+\end{equation}
+
+\subsubsection{Powiększenie przez soczewkę}
+
+\begin{wzorbox}
+\begin{equation}
+  m = \frac{h_i}{h_o} = -\frac{d_i}{d_o}
+  \label{eq:powiekszenie_soczewka}
+\end{equation}
+\end{wzorbox}
+
+\begin{objasnbox}
+\textbf{Objaśnienie symboli:}
+\begin{itemize}[leftmargin=2em]
+  \oznaczenie{m}{Powiększenie liniowe (bezwymiarowe)}
+  \oznaczenie{h_i}{Rozmiar obrazu \quad [\textbf{m}]}
+  \oznaczenie{h_o}{Rozmiar przedmiotu \quad [\textbf{m}]}
+  \oznaczenie{d_i}{Odległość obrazu \quad [\textbf{m}]}
+  \oznaczenie{d_o}{Odległość przedmiotu \quad [\textbf{m}]}
+\end{itemize}
+\end{objasnbox}
+
+\subsubsection{Obrazy w soczewce skupiającej -- podsumowanie}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{lll}
+\toprule
+\textbf{Położenie przedmiotu} & \textbf{Charakter obrazu} & \textbf{Powiększenie} \\
+\midrule
+$d_o > 2f$        & rzeczywisty, odwrócony & $|m|<1$ \\
+$d_o = 2f$        & rzeczywisty, odwrócony & $|m|=1$ \\
+$f < d_o < 2f$    & rzeczywisty, odwrócony & $|m|>1$ \\
+$d_o = f$         & brak obrazu (wiązka równoległa) & --- \\
+$d_o < f$         & pozorny, prosty       & $|m|>1$ \\
+\bottomrule
+\end{tabular}
+\caption{Obrazy w soczewce skupiającej}
+\end{table}
+
+\subsubsection{Konstrukcja geometryczna obrazów w soczewce}
+
+Podobnie jak dla zwierciadeł stosuje się trzy promienie pomocnicze:
+\begin{enumerate}
+  \item Promień równoległy do osi optycznej $\to$ po przejściu przez soczewkę skupiającą
+        przechodzi przez ognisko $F_2$ po prawej stronie.
+  \item Promień przez środek optyczny soczewki $O$ $\to$ nie zmienia kierunku.
+  \item Promień przez ognisko $F_1$ po lewej $\to$ po przejściu wychodzi
+        równolegle do osi optycznej.
+\end{enumerate}
+
+\newpage
+% ====================================================================
+\section{Odbicie i załamanie światła}
+% ====================================================================
+
+\subsection{Współczynnik załamania światła}
+
+Gdy światło przechodzi z próżni (lub powietrza) do ośrodka optycznie gęstszego,
+jego prędkość maleje.  Współczynnik załamania opisuje tę relację:
+
+\begin{wzorbox}
+\begin{equation}
+  n = \frac{c}{v}
+  \label{eq:wspolczynnik_zalamaniia}
+\end{equation}
+\end{wzorbox}
+
+\begin{objasnbox}
+\textbf{Objaśnienie symboli:}
+\begin{itemize}[leftmargin=2em]
+  \oznaczenie{n}{Bezwzględny współczynnik załamania (bezwymiarowy; $n \geq 1$)}
+  \oznaczenie{c}{Prędkość światła w próżni, $c \approx 3\times10^8\,\si{m/s}$}
+  \oznaczenie{v}{Prędkość fazowa fali w danym ośrodku \quad [\textbf{m/s}]}
+\end{itemize}
+\textbf{Przykłady:}
+\begin{itemize}
+  \item Powietrze: $n \approx 1{,}000$
+  \item Woda: $n \approx 1{,}33$
+  \item Szkło optyczne: $n \approx 1{,}5$
+  \item Diament: $n \approx 2{,}42$
+\end{itemize}
+\end{objasnbox}
+
+\subsection{Kąty padania, odbicia i załamania}
+
+\begin{itemize}
+  \item \textbf{Kąt padania} $\theta_1$ -- kąt między promieniem \emph{padającym}
+        a normalną do powierzchni granicznej w punkcie padania.
+  \item \textbf{Kąt odbicia} $\theta_r$ -- kąt między promieniem \emph{odbitym}
+        a normalną.
+  \item \textbf{Kąt załamania} $\theta_2$ -- kąt między promieniem \emph{załamanym}
+        a normalną po drugiej stronie powierzchni.
+\end{itemize}
+
+Wszystkie kąty mierzone są od \textbf{normalnej} do powierzchni, nie od samej powierzchni.
+
+\subsection{Prawo odbicia}
+
+\begin{wzorbox}
+\begin{equation}
+  \theta_r = \theta_1
+  \label{eq:prawo_odbicia}
+\end{equation}
+\end{wzorbox}
+
+\begin{objasnbox}
+\textbf{Objaśnienie:}
+\begin{itemize}[leftmargin=2em]
+  \oznaczenie{\theta_1}{Kąt padania (od normalnej) \quad [°] lub [\textbf{rad}]}
+  \oznaczenie{\theta_r}{Kąt odbicia (od normalnej) \quad [°] lub [\textbf{rad}]}
+\end{itemize}
+Promień padający, odbity i normalna leżą w jednej płaszczyźnie.
+\end{objasnbox}
+
+\subsection{Prawo Snella (Snelliusa)}
+
+\begin{wzorbox}
+\begin{equation}
+  n_1 \sin\theta_1 = n_2 \sin\theta_2
+  \label{eq:snell}
+\end{equation}
+\end{wzorbox}
+
+\begin{objasnbox}
+\textbf{Objaśnienie symboli:}
+\begin{itemize}[leftmargin=2em]
+  \oznaczenie{n_1}{Współczynnik załamania ośrodka, w którym biegnie promień padający
+                   (bezwymiarowy)}
+  \oznaczenie{\theta_1}{Kąt padania \quad [°] lub [\textbf{rad}]}
+  \oznaczenie{n_2}{Współczynnik załamania ośrodka, w którym biegnie promień załamany
+                   (bezwymiarowy)}
+  \oznaczenie{\theta_2}{Kąt załamania \quad [°] lub [\textbf{rad}]}
+\end{itemize}
+\end{objasnbox}
+
+\subsubsection{Całkowite wewnętrzne odbicie}
+
+Gdy $n_1 > n_2$ i kąt padania $\theta_1$ przekracza \textbf{kąt graniczny} $\theta_c$,
+następuje całkowite wewnętrzne odbicie (brak promienia załamanego):
+
+\begin{wzorbox}
+\begin{equation}
+  \sin\theta_c = \frac{n_2}{n_1}
+  \label{eq:kat_graniczny}
+\end{equation}
+\end{wzorbox}
+
+\begin{objasnbox}
+\textbf{Objaśnienie symboli:}
+\begin{itemize}[leftmargin=2em]
+  \oznaczenie{\theta_c}{Kąt graniczny (krytyczny) całkowitego wewnętrznego odbicia
+                        \quad [°] lub [\textbf{rad}]}
+  \oznaczenie{n_1}{Współczynnik załamania ośrodka gęstszego optycznie ($n_1>n_2$)}
+  \oznaczenie{n_2}{Współczynnik załamania ośrodka rzadszego optycznie}
+\end{itemize}
+\textbf{Zastosowanie:} światłowody, pryzmaty odchylające.
+\end{objasnbox}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.1]
+  % Interface
+  \fill[blue!8] (-3,-2) rectangle (3,0);
+  \draw[thick] (-3,0) -- (3,0);
+  \node[right] at (3,0) {granica ośrodków};
+  \node[above right] at (-3,0.1) {$n_1$};
+  \node[below right] at (-3,-0.1) {$n_2 > n_1$};
+  % Normal
+  \draw[dashed] (0,-2) -- (0,2);
+  % Incident ray
+  \draw[orange,very thick,->] (-2,1.6) -- (0,0) node[midway,above]{padający};
+  % Reflected ray
+  \draw[orange!70,very thick,->] (0,0) -- (2,1.6) node[midway,above]{odbity};
+  % Refracted ray
+  \draw[red,very thick,->] (0,0) -- (0.8,-1.8) node[midway,right]{załamany};
+  % Angles
+  \draw[<->,gray] (0,0.8) arc (90:128:0.8) node[midway,above left,scale=0.8]{$\theta_1$};
+  \draw[<->,gray] (0,0.8) arc (90:52:0.8) node[midway,above right,scale=0.8]{$\theta_r$};
+  \draw[<->,gray] (0,-0.8) arc (270:295:0.8) node[midway,below right,scale=0.8]{$\theta_2$};
+\end{tikzpicture}
+\caption{Odbicie i załamanie światła na granicy ośrodków.}
+\end{figure}
+
+\newpage
+% ====================================================================
+\section{Rozszczepienie światła}
+% ====================================================================
+
+\subsection{Dyspersja chromatyczna}
+
+Dyspersja chromatyczna to zjawisko zależności współczynnika załamania $n$ od
+długości fali $\lambda$ (lub częstotliwości $\nu$) światła.  W ośrodku dyspersyjnym:
+
+\begin{wzorbox}
+\begin{equation}
+  n = n(\lambda)
+  \label{eq:dyspersja}
+\end{equation}
+\end{wzorbox}
+
+Zwykle w szkle $n$ maleje wraz ze wzrostem $\lambda$ -- jest to
+\textbf{dyspersja normalna}.  Współczynnik dyspersji Abbego opisuje stopień
+dyspersji materiału:
+
+\begin{wzorbox}
+\begin{equation}
+  V_d = \frac{n_d - 1}{n_F - n_C}
+  \label{eq:liczba_abbego}
+\end{equation}
+\end{wzorbox}
+
+\begin{objasnbox}
+\textbf{Objaśnienie symboli:}
+\begin{itemize}[leftmargin=2em]
+  \oznaczenie{V_d}{Liczba Abbego (współczynnik dyspersji) -- bezwymiarowa;
+                   większa wartość = mniejsza dyspersja}
+  \oznaczenie{n_d}{Współczynnik załamania dla linii $d$ helu $\lambda_d = 587{,}6\,\si{nm}$
+                   (żółta)}
+  \oznaczenie{n_F}{Współczynnik załamania dla linii $F$ wodoru $\lambda_F = 486{,}1\,\si{nm}$
+                   (niebieska)}
+  \oznaczenie{n_C}{Współczynnik załamania dla linii $C$ wodoru $\lambda_C = 656{,}3\,\si{nm}$
+                   (czerwona)}
+\end{itemize}
+\end{objasnbox}
+
+\subsection{Widmo promieniowania elektromagnetycznego}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{llll}
+\toprule
+\textbf{Zakres} & \textbf{Skrót} &
+\textbf{Długość fali $\lambda$} & \textbf{Częstotliwość $\nu$} \\
+\midrule
+Nadfiolet (ultrafiolet) & UV  & $100 - 400\,\si{nm}$   & $750\,\si{THz} - 30\,\si{PHz}$ \\
+Widzialne              & VIS  & $380 - 780\,\si{nm}$   & $385 - 789\,\si{THz}$ \\
+\quad fiolet           &      & $380 - 450\,\si{nm}$   & $670 - 789\,\si{THz}$ \\
+\quad niebieski        &      & $450 - 490\,\si{nm}$   & $612 - 670\,\si{THz}$ \\
+\quad zielony          &      & $490 - 570\,\si{nm}$   & $526 - 612\,\si{THz}$ \\
+\quad żółty            &      & $570 - 590\,\si{nm}$   & $508 - 526\,\si{THz}$ \\
+\quad pomarańczowy     &      & $590 - 620\,\si{nm}$   & $484 - 508\,\si{THz}$ \\
+\quad czerwony         &      & $620 - 780\,\si{nm}$   & $385 - 484\,\si{THz}$ \\
+Podczerwień (infrared) & IR   & $780\,\si{nm} - 1\,\si{mm}$ & $300\,\si{GHz} - 385\,\si{THz}$ \\
+\bottomrule
+\end{tabular}
+\caption{Zakresy promieniowania elektromagnetycznego}
+\end{table}
+
+Zależność długości fali i częstotliwości:
+\begin{wzorbox}
+\begin{equation}
+  c = \lambda \nu \quad \Longrightarrow \quad \nu = \frac{c}{\lambda}
+  \label{eq:predkosc_fali}
+\end{equation}
+\end{wzorbox}
+
+\begin{objasnbox}
+\textbf{Objaśnienie symboli:}
+\begin{itemize}[leftmargin=2em]
+  \oznaczenie{c}{Prędkość światła w próżni, $c \approx 3\times10^8\,\si{m/s}}
+  \oznaczenie{\lambda}{Długość fali \quad [\textbf{m}]; praktycznie [\textbf{nm}]
+                       (1\,nm $= 10^{-9}$\,m)}
+  \oznaczenie{\nu}{Częstotliwość \quad [\textbf{Hz}]; praktycznie [\textbf{THz}]
+                   (1\,THz $= 10^{12}$\,Hz)}
+\end{itemize}
+\end{objasnbox}
+
+\subsection{Bieg promienia w pryzmacie}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[scale=1.2]
+  % Prism
+  \draw[thick,fill=blue!10] (0,0) -- (3,0) -- (1.5,2.6) -- cycle;
+  % Apex angle label
+  \node at (1.5,2.0) {$\varphi$};
+  % Incident ray
+  \draw[orange,very thick,->] (-1,1.8) -- (0.6,1.3)
+        node[midway,above left]{promień padający};
+  % Ray inside prism
+  \draw[orange!70,thick] (0.6,1.3) -- (2.2,0.9);
+  % Refracted ray
+  \draw[red,very thick,->] (2.2,0.9) -- (3.8,0.3)
+        node[midway,below right]{promień wychodzący};
+  % Deviation angle
+  \draw[dashed,gray] (-1,1.8) -- (4.0,1.8);
+  \draw[<->,blue!80] (3.0,1.8) -- (3.8,0.3) node[midway,right]{$\delta$};
+  % Apex
+  \node[above] at (1.5,2.6) {$A$};
+\end{tikzpicture}
+\caption{Bieg promienia w pryzmacie. $\varphi$ -- kąt łamiący, $\delta$ -- kąt odchylenia.}
+\end{figure}
+
+\subsubsection{Kąt łamiący pryzmatu i odchylenie promienia}
+
+\begin{wzorbox}
+\begin{equation}
+  \delta = (\theta_1 + \theta_2') - \varphi
+  \label{eq:odchylenie_pryzmatu}
+\end{equation}
+\end{wzorbox}
+
+\begin{objasnbox}
+\textbf{Objaśnienie symboli:}
+\begin{itemize}[leftmargin=2em]
+  \oznaczenie{\delta}{Kąt odchylenia promienia przez pryzmat \quad [°] lub [\textbf{rad}]}
+  \oznaczenie{\theta_1}{Kąt padania na pierwszą powierzchnię pryzmatu \quad [°]}
+  \oznaczenie{\theta_2'}{Kąt wyjścia z drugiej powierzchni pryzmatu \quad [°]}
+  \oznaczenie{\varphi}{Kąt łamiący (wierzchołkowy) pryzmatu \quad [°]}
+\end{itemize}
+\end{objasnbox}
+
+Na wewnątrz pryzmatu prawo Snella stosuje się dwukrotnie:
+\begin{equation}
+  n_0 \sin\theta_1 = n_p \sin\theta_1'
+  \qquad\text{(pierwsza powierzchnia)}
+\end{equation}
+\begin{equation}
+  n_p \sin\theta_2 = n_0 \sin\theta_2'
+  \qquad\text{(druga powierzchnia)}
+\end{equation}
+
+gdzie kąty wewnątrz pryzmatu spełniają:
+\begin{equation}
+  \theta_1' + \theta_2 = \varphi
+\end{equation}
+
+\begin{objasnbox}
+\textbf{Objaśnienie symboli:}
+\begin{itemize}[leftmargin=2em]
+  \oznaczenie{n_0}{Współczynnik załamania ośrodka (powietrze $\approx 1$)}
+  \oznaczenie{n_p}{Współczynnik załamania materiału pryzmatu}
+  \oznaczenie{\theta_1'}{Kąt załamania na pierwszej powierzchni (wewnątrz pryzmatu)}
+  \oznaczenie{\theta_2}{Kąt padania na drugą powierzchnię (wewnątrz pryzmatu)}
+\end{itemize}
+\end{objasnbox}
+
+\subsubsection{Najmniejszy kąt odchylenia $\delta_{\min}$}
+
+Minimalne odchylenie zachodzi przy symetrycznym biegu promienia przez pryzmat
+(promień wewnątrz pryzmatu jest równoległy do podstawy).
+
+\begin{wzorbox}
+\begin{equation}
+  n_p = \frac{\sin\!\left(\dfrac{\varphi + \delta_{\min}}{2}\right)}
+             {\sin\!\left(\dfrac{\varphi}{2}\right)}
+  \label{eq:min_odchylenie}
+\end{equation}
+\end{wzorbox}
+
+\begin{objasnbox}
+\textbf{Objaśnienie symboli:}
+\begin{itemize}[leftmargin=2em]
+  \oznaczenie{n_p}{Współczynnik załamania materiału pryzmatu (bezwymiarowy)}
+  \oznaczenie{\varphi}{Kąt łamiący pryzmatu \quad [°]}
+  \oznaczenie{\delta_{\min}}{Minimalny kąt odchylenia promienia \quad [°]}
+\end{itemize}
+Wzór ten służy do wyznaczania $n_p$ na podstawie pomiarów $\varphi$ i $\delta_{\min}$.
+\end{objasnbox}
+
+Przy małych kątach łamiących ($\varphi \ll 1$) wzór upraszcza się:
+\begin{equation}
+  \delta \approx (n_p - 1)\,\varphi
+  \label{eq:pryzmnat_male_katy}
+\end{equation}
+
+% ====================================================================
+\section{Zestawienie wszystkich wzorów}
+% ====================================================================
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.6}
+\begin{tabular}{lll}
+\toprule
+\textbf{Temat} & \textbf{Wzór} & \textbf{Nr równania} \\
+\midrule
+Fotometria -- światłość     & $I = d\Phi/d\Omega$ & \eqref{eq:swiatlosc} \\
+Prawo odwrotnych kwadratów  & $E = I/r^2$         & \eqref{eq:prawo_odwrotnych_kwadratow} \\
+Oświetlenie (kąt)           & $E = I\cos\theta/r^2$ & \eqref{eq:lambert} \\
+Ogniskowa zwierciadła       & $f = R/2$           & \eqref{eq:ogniskowa_zwierciadla} \\
+Równanie zwierciadła        & $1/f = 1/d_o + 1/d_i$ & \eqref{eq:zwierciadlo} \\
+Powiększenie                & $m = -d_i/d_o$      & \eqref{eq:powiekszenie_zwierciadlo} \\
+Równanie soczewki cienkiej  & $1/f = 1/d_o + 1/d_i$ & \eqref{eq:soczewka_cienka} \\
+Równanie szlifierzy soczewek & $1/f=(n_L/n_0-1)(1/R_1-1/R_2)$ & \eqref{eq:szlifierzy} \\
+Zdolność skupiająca         & $D = 1/f$           & \eqref{eq:zdolnosc_skupiajaca} \\
+Wsp. załamania              & $n = c/v$           & \eqref{eq:wspolczynnik_zalamaniia} \\
+Prawo odbicia               & $\theta_r = \theta_1$ & \eqref{eq:prawo_odbicia} \\
+Prawo Snella                & $n_1\sin\theta_1 = n_2\sin\theta_2$ & \eqref{eq:snell} \\
+Kąt graniczny               & $\sin\theta_c = n_2/n_1$ & \eqref{eq:kat_graniczny} \\
+Prędkość fali               & $c = \lambda\nu$    & \eqref{eq:predkosc_fali} \\
+Odchylenie w pryzmacie      & $\delta = (\theta_1+\theta_2')-\varphi$ & \eqref{eq:odchylenie_pryzmatu} \\
+Min. odchylenie w pryzmacie & $n_p = \sin((\varphi+\delta_{\min})/2)/\sin(\varphi/2)$ & \eqref{eq:min_odchylenie} \\
+\bottomrule
+\end{tabular}
+\caption{Zestawienie wzorów kolokwialnych}
+\end{table}
+
+\end{document}

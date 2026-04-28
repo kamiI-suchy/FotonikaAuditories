@@ -1,0 +1,587 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{float}
+
+\geometry{margin=2cm}
+
+\hypersetup{colorlinks=true, linkcolor=blue!70!black}
+
+% ---- colours for topic rows ----
+\definecolor{rowfoto}{RGB}{220,235,252}
+\definecolor{rowzwierc}{RGB}{220,252,230}
+\definecolor{rowsocz}{RGB}{255,245,210}
+\definecolor{rowodbl}{RGB}{252,230,220}
+\definecolor{rowrozs}{RGB}{240,220,252}
+\definecolor{headercolor}{RGB}{50,80,140}
+
+% ====================================================================
+\title{\textbf{Fotonika -- Zestawienie oznaczeń i jednostek}\\[4pt]
+       \large Ściągawka do kolokwium}
+\author{}
+\date{\today}
+% ====================================================================
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\textit{Plik zawiera wyłącznie zestawienie wszystkich symboli fizycznych
+ używanych na kolokwium: co dany symbol oznacza i w jakiej jednostce się
+ go podaje.  Szczegółowe wyjaśnienia i wyprowadzenia -- patrz \texttt{opracowanie.pdf}.}
+\end{center}
+
+\bigskip
+\tableofcontents
+\newpage
+
+% ====================================================================
+\section{Fotometria}
+% ====================================================================
+
+\begin{longtable}{>{\bfseries}p{1.6cm} p{6.5cm} p{3.2cm} p{3.5cm}}
+\toprule
+\rowcolor{headercolor}
+\color{white}Symbol &
+\color{white}Nazwa wielkości &
+\color{white}Jednostka &
+\color{white}Uwagi \\
+\midrule
+\endfirsthead
+\toprule
+\rowcolor{headercolor}
+\color{white}Symbol &
+\color{white}Nazwa wielkości &
+\color{white}Jednostka &
+\color{white}Uwagi \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+\rowcolor{rowfoto}
+$I$     & Światłość źródła światła
+        & \textbf{kandela [cd]}
+        & Jednostka podstawowa SI \\
+
+\rowcolor{rowfoto}
+$\Phi$  & Strumień świetlny
+        & \textbf{lumen [lm]}
+        & $1\,\mathrm{lm} = 1\,\mathrm{cd\cdot sr}$ \\
+
+\rowcolor{rowfoto}
+$E$     & Natężenie oświetlenia (iluminancja)
+        & \textbf{luks [lx]}
+        & $1\,\mathrm{lx} = 1\,\mathrm{lm/m^2}$ \\
+
+\rowcolor{rowfoto}
+$\Omega$ & Kąt bryłowy
+        & \textbf{steradian [sr]}
+        & $\Omega_{\text{pełny}} = 4\pi\,\mathrm{sr}$ \\
+
+\rowcolor{rowfoto}
+$A$     & Pole powierzchni
+        & \textbf{metr kwadratowy [m$^2$]}
+        & \\
+
+\rowcolor{rowfoto}
+$r$     & Odległość od źródła do powierzchni
+        & \textbf{metr [m]}
+        & \\
+
+\rowcolor{rowfoto}
+$\theta$ & Kąt między promieniem a normalną
+          do powierzchni
+        & \textbf{stopień [°] lub radian [rad]}
+        & Używany w prawie Lamberta \\
+
+\rowcolor{rowfoto}
+$L$     & Luminancja (jasność)
+        & \textbf{[cd/m$^2$]}
+        & Świetlistość powierzchni \\
+
+\rowcolor{rowfoto}
+$K_m$   & Maks. skuteczność świetlna
+        & \textbf{lumen na wat [lm/W]}
+        & $K_m \approx 683\,\mathrm{lm/W}$ przy $\lambda=555\,\mathrm{nm}$ \\
+
+\rowcolor{rowfoto}
+$V(\lambda)$ & Krzywa czułości widmowej oka
+        & bezwymiarowa ($0\leq V\leq 1$)
+        & Maks. dla $\lambda=555\,\mathrm{nm}$ \\
+
+\rowcolor{rowfoto}
+$P$     & Moc promieniowania
+        & \textbf{wat [W]}
+        & \\
+
+\rowcolor{rowfoto}
+$\eta$  & Skuteczność świetlna
+        & \textbf{[lm/W]}
+        & $\Phi = \eta \cdot P$ \\
+
+\end{longtable}
+
+% ====================================================================
+\section{Zwierciadła płaskie i sferyczne}
+% ====================================================================
+
+\begin{longtable}{>{\bfseries}p{1.6cm} p{6.5cm} p{3.2cm} p{3.5cm}}
+\toprule
+\rowcolor{headercolor}
+\color{white}Symbol &
+\color{white}Nazwa wielkości &
+\color{white}Jednostka &
+\color{white}Uwagi \\
+\midrule
+\endfirsthead
+\toprule
+\rowcolor{headercolor}
+\color{white}Symbol &
+\color{white}Nazwa wielkości &
+\color{white}Jednostka &
+\color{white}Uwagi \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+\rowcolor{rowzwierc}
+$f$     & Ogniskowa zwierciadła
+        & \textbf{metr [m]}
+        & $f>0$ -- wklęsłe; $f<0$ -- wypukłe \\
+
+\rowcolor{rowzwierc}
+$R$     & Promień krzywizny zwierciadła
+        & \textbf{metr [m]}
+        & $f = R/2$ \\
+
+\rowcolor{rowzwierc}
+$d_o$   & Odległość \textbf{przedmiotu} od zwierciadła
+        & \textbf{metr [m]}
+        & $d_o > 0$ -- przedmiot realny \\
+
+\rowcolor{rowzwierc}
+$d_i$   & Odległość \textbf{obrazu} od zwierciadła
+        & \textbf{metr [m]}
+        & $d_i>0$ -- obraz rzeczywisty;
+          $d_i<0$ -- pozorny \\
+
+\rowcolor{rowzwierc}
+$m$     & Powiększenie liniowe
+        & bezwymiarowe
+        & $m = -d_i/d_o$;
+          $m>0$ -- obraz prosty;
+          $m<0$ -- odwrócony \\
+
+\rowcolor{rowzwierc}
+$h_o$   & Wysokość (rozmiar) przedmiotu
+        & \textbf{metr [m]}
+        & \\
+
+\rowcolor{rowzwierc}
+$h_i$   & Wysokość (rozmiar) obrazu
+        & \textbf{metr [m]}
+        & $m = h_i / h_o$ \\
+
+\end{longtable}
+
+% ====================================================================
+\section{Soczewki}
+% ====================================================================
+
+\begin{longtable}{>{\bfseries}p{1.6cm} p{6.5cm} p{3.2cm} p{3.5cm}}
+\toprule
+\rowcolor{headercolor}
+\color{white}Symbol &
+\color{white}Nazwa wielkości &
+\color{white}Jednostka &
+\color{white}Uwagi \\
+\midrule
+\endfirsthead
+\toprule
+\rowcolor{headercolor}
+\color{white}Symbol &
+\color{white}Nazwa wielkości &
+\color{white}Jednostka &
+\color{white}Uwagi \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+\rowcolor{rowsocz}
+$f$     & Ogniskowa soczewki
+        & \textbf{metr [m]}
+        & $f>0$ skupiająca; $f<0$ rozpraszająca \\
+
+\rowcolor{rowsocz}
+$D$     & Zdolność skupiająca (moc optyczna)
+        & \textbf{dioptria [D]} $= \mathrm{m}^{-1}$
+        & $D = 1/f$ \\
+
+\rowcolor{rowsocz}
+$d_o$   & Odległość \textbf{przedmiotu} od soczewki
+        & \textbf{metr [m]}
+        & $d_o>0$ -- po lewej stronie soczewki \\
+
+\rowcolor{rowsocz}
+$d_i$   & Odległość \textbf{obrazu} od soczewki
+        & \textbf{metr [m]}
+        & $d_i>0$ -- rzeczywisty (prawa str.);
+          $d_i<0$ -- pozorny (lewa str.) \\
+
+\rowcolor{rowsocz}
+$m$     & Powiększenie liniowe
+        & bezwymiarowe
+        & $m = -d_i/d_o$ \\
+
+\rowcolor{rowsocz}
+$n_L$   & Współczynnik załamania materiału soczewki
+        & bezwymiarowy ($n\geq 1$)
+        & \\
+
+\rowcolor{rowsocz}
+$n_0$   & Współczynnik załamania ośrodka otoczenia
+        & bezwymiarowy
+        & Powietrze: $n_0\approx 1{,}000$ \\
+
+\rowcolor{rowsocz}
+$R_1$   & Promień krzywizny \textbf{pierwszej} powierzchni
+          soczewki
+        & \textbf{metr [m]}
+        & $R_1>0$: środek krzywizny po prawej \\
+
+\rowcolor{rowsocz}
+$R_2$   & Promień krzywizny \textbf{drugiej} powierzchni
+          soczewki
+        & \textbf{metr [m]}
+        & $R_2<0$: środek krzywizny po lewej
+          (typowe dla bikonweksowej) \\
+
+\rowcolor{rowsocz}
+$h_o$   & Rozmiar przedmiotu
+        & \textbf{metr [m]}
+        & \\
+
+\rowcolor{rowsocz}
+$h_i$   & Rozmiar obrazu
+        & \textbf{metr [m]}
+        & \\
+
+\end{longtable}
+
+% ====================================================================
+\section{Odbicie i załamanie światła}
+% ====================================================================
+
+\begin{longtable}{>{\bfseries}p{1.6cm} p{6.5cm} p{3.2cm} p{3.5cm}}
+\toprule
+\rowcolor{headercolor}
+\color{white}Symbol &
+\color{white}Nazwa wielkości &
+\color{white}Jednostka &
+\color{white}Uwagi \\
+\midrule
+\endfirsthead
+\toprule
+\rowcolor{headercolor}
+\color{white}Symbol &
+\color{white}Nazwa wielkości &
+\color{white}Jednostka &
+\color{white}Uwagi \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+\rowcolor{rowodbl}
+$n$     & Bezwzględny współczynnik załamania ośrodka
+        & bezwymiarowy ($n\geq 1$)
+        & $n = c/v$ \\
+
+\rowcolor{rowodbl}
+$n_1$   & Wsp. załamania ośrodka \textbf{padania}
+        & bezwymiarowy
+        & \\
+
+\rowcolor{rowodbl}
+$n_2$   & Wsp. załamania ośrodka \textbf{załamania}
+        & bezwymiarowy
+        & \\
+
+\rowcolor{rowodbl}
+$c$     & Prędkość światła w próżni
+        & \textbf{metr na sekundę [m/s]}
+        & $c \approx 3\times10^8\,\mathrm{m/s}$ \\
+
+\rowcolor{rowodbl}
+$v$     & Prędkość fazowa fali w ośrodku
+        & \textbf{metr na sekundę [m/s]}
+        & $v \leq c$ \\
+
+\rowcolor{rowodbl}
+$\theta_1$ & Kąt \textbf{padania} (od normalnej)
+        & \textbf{stopień [°] lub radian [rad]}
+        & Mierzony od normalnej do powierzchni \\
+
+\rowcolor{rowodbl}
+$\theta_r$ & Kąt \textbf{odbicia} (od normalnej)
+        & \textbf{stopień [°] lub radian [rad]}
+        & Prawo odbicia: $\theta_r = \theta_1$ \\
+
+\rowcolor{rowodbl}
+$\theta_2$ & Kąt \textbf{załamania} (od normalnej)
+        & \textbf{stopień [°] lub radian [rad]}
+        & \\
+
+\rowcolor{rowodbl}
+$\theta_c$ & Kąt graniczny (krytyczny) całkowitego
+             wewnętrznego odbicia
+        & \textbf{stopień [°] lub radian [rad]}
+        & $\sin\theta_c = n_2/n_1$;
+          wymaga $n_1 > n_2$ \\
+
+\end{longtable}
+
+% ====================================================================
+\section{Rozszczepienie światła}
+% ====================================================================
+
+\begin{longtable}{>{\bfseries}p{1.6cm} p{6.5cm} p{3.2cm} p{3.5cm}}
+\toprule
+\rowcolor{headercolor}
+\color{white}Symbol &
+\color{white}Nazwa wielkości &
+\color{white}Jednostka &
+\color{white}Uwagi \\
+\midrule
+\endfirsthead
+\toprule
+\rowcolor{headercolor}
+\color{white}Symbol &
+\color{white}Nazwa wielkości &
+\color{white}Jednostka &
+\color{white}Uwagi \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+\rowcolor{rowrozs}
+$\lambda$ & Długość fali światła
+        & \textbf{nanometr [nm]} lub \textbf{metr [m]}
+        & $1\,\mathrm{nm} = 10^{-9}\,\mathrm{m}$;
+          zakres VIS: $380$--$780\,\mathrm{nm}$ \\
+
+\rowcolor{rowrozs}
+$\nu$   & Częstotliwość fali światła
+        & \textbf{teraherc [THz]} lub \textbf{herc [Hz]}
+        & $1\,\mathrm{THz} = 10^{12}\,\mathrm{Hz}$;
+          $\nu = c/\lambda$ \\
+
+\rowcolor{rowrozs}
+$c$     & Prędkość światła w próżni
+        & \textbf{metr na sekundę [m/s]}
+        & $c \approx 3\times10^8\,\mathrm{m/s}$ \\
+
+\rowcolor{rowrozs}
+$n(\lambda)$ & Współczynnik załamania zależny od
+               długości fali (dyspersja)
+        & bezwymiarowy
+        & Rośnie gdy $\lambda$ maleje
+          (dyspersja normalna) \\
+
+\rowcolor{rowrozs}
+$V_d$   & Liczba Abbego (współczynnik dyspersji)
+        & bezwymiarowy
+        & Duże $V_d$ = mała dyspersja \\
+
+\rowcolor{rowrozs}
+$n_d$   & Wsp. załamania dla linii $d$ He
+          ($\lambda_d = 587{,}6\,\mathrm{nm}$, żółta)
+        & bezwymiarowy
+        & Linia referencyjna \\
+
+\rowcolor{rowrozs}
+$n_F$   & Wsp. załamania dla linii $F$ H
+          ($\lambda_F = 486{,}1\,\mathrm{nm}$, niebieska)
+        & bezwymiarowy
+        & \\
+
+\rowcolor{rowrozs}
+$n_C$   & Wsp. załamania dla linii $C$ H
+          ($\lambda_C = 656{,}3\,\mathrm{nm}$, czerwona)
+        & bezwymiarowy
+        & \\
+
+\rowcolor{rowrozs}
+$\varphi$ & Kąt łamiący (wierzchołkowy) pryzmatu
+        & \textbf{stopień [°]}
+        & Kąt między obiema powierzchniami
+          łamiącymi pryzmatu \\
+
+\rowcolor{rowrozs}
+$\delta$ & Kąt odchylenia promienia przez pryzmat
+        & \textbf{stopień [°]}
+        & $\delta = (\theta_1 + \theta_2') - \varphi$ \\
+
+\rowcolor{rowrozs}
+$\delta_{\min}$ & Minimalny kąt odchylenia promienia
+                  w pryzmacie
+        & \textbf{stopień [°]}
+        & Symetryczny bieg promienia;
+          służy do pomiaru $n_p$ \\
+
+\rowcolor{rowrozs}
+$n_p$   & Współczynnik załamania materiału pryzmatu
+        & bezwymiarowy
+        & $n_p = \dfrac{\sin\!\left(\frac{\varphi+\delta_{\min}}{2}\right)}%
+                       {\sin\!\left(\frac{\varphi}{2}\right)}$ \\
+
+\rowcolor{rowrozs}
+$n_0$   & Współczynnik załamania ośrodka wokół
+          pryzmatu (zwykle powietrze)
+        & bezwymiarowy
+        & $n_0 \approx 1$ \\
+
+\rowcolor{rowrozs}
+$\theta_1$ & Kąt padania na pierwszą powierzchnię
+             pryzmatu
+        & \textbf{stopień [°]}
+        & Mierzony od normalnej \\
+
+\rowcolor{rowrozs}
+$\theta_1'$ & Kąt załamania na pierwszej powierzchni
+              (wewnątrz pryzmatu)
+        & \textbf{stopień [°]}
+        & $n_0\sin\theta_1 = n_p\sin\theta_1'$ \\
+
+\rowcolor{rowrozs}
+$\theta_2$ & Kąt padania na drugą powierzchnię
+             (wewnątrz pryzmatu)
+        & \textbf{stopień [°]}
+        & $\theta_1' + \theta_2 = \varphi$ \\
+
+\rowcolor{rowrozs}
+$\theta_2'$ & Kąt wyjścia z drugiej powierzchni
+              pryzmatu
+        & \textbf{stopień [°]}
+        & $n_p\sin\theta_2 = n_0\sin\theta_2'$ \\
+
+\end{longtable}
+
+% ====================================================================
+\section{Zestawienie zbiorcze -- wszystkie symbole}
+% ====================================================================
+
+\begin{longtable}{>{\bfseries}p{2.0cm} p{7.0cm} p{3.2cm} p{2.5cm}}
+\toprule
+\rowcolor{headercolor}
+\color{white}Symbol &
+\color{white}Opis &
+\color{white}Jednostka &
+\color{white}Temat \\
+\midrule
+\endfirsthead
+\toprule
+\rowcolor{headercolor}
+\color{white}Symbol &
+\color{white}Opis &
+\color{white}Jednostka &
+\color{white}Temat \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+\rowcolor{rowfoto}
+$I$            & Światłość        & \textbf{cd}                & Fotometria \\
+\rowcolor{rowfoto}
+$\Phi$         & Strumień świetlny & \textbf{lm}               & Fotometria \\
+\rowcolor{rowfoto}
+$E$            & Natężenie oświetlenia & \textbf{lx}            & Fotometria \\
+\rowcolor{rowfoto}
+$\Omega$       & Kąt bryłowy      & \textbf{sr}                & Fotometria \\
+\rowcolor{rowfoto}
+$L$            & Luminancja       & \textbf{cd/m}$^2$          & Fotometria \\
+\rowcolor{rowfoto}
+$K_m$          & Maks. skuteczność świetlna & \textbf{lm/W}    & Fotometria \\
+\rowcolor{rowzwierc}
+$f$            & Ogniskowa zwierciadła / soczewki & \textbf{m}  & Zwierciadła, Soczewki \\
+\rowcolor{rowzwierc}
+$R$            & Promień krzywizny & \textbf{m}                & Zwierciadła, Soczewki \\
+\rowcolor{rowzwierc}
+$d_o$          & Odległość przedmiotu & \textbf{m}             & Zwierciadła, Soczewki \\
+\rowcolor{rowzwierc}
+$d_i$          & Odległość obrazu  & \textbf{m}               & Zwierciadła, Soczewki \\
+\rowcolor{rowzwierc}
+$m$            & Powiększenie liniowe & bezwymiarowe            & Zwierciadła, Soczewki \\
+\rowcolor{rowzwierc}
+$h_o, h_i$     & Rozmiar przed./obrazu & \textbf{m}           & Zwierciadła, Soczewki \\
+\rowcolor{rowsocz}
+$D$            & Zdolność skupiająca & \textbf{D} (dioptria)   & Soczewki \\
+\rowcolor{rowsocz}
+$n_L$          & Wsp. zał. soczewki & bezwymiarowy             & Soczewki \\
+\rowcolor{rowsocz}
+$R_1, R_2$     & Promienie krzywizny powierzchni & \textbf{m}  & Soczewki \\
+\rowcolor{rowodbl}
+$n$, $n_1$, $n_2$ & Współczynnik załamania & bezwymiarowy      & Odbicie/załamanie \\
+\rowcolor{rowodbl}
+$c$            & Prędkość światła w próżni & \textbf{m/s}       & Odbicie/załamanie, Dyspersja \\
+\rowcolor{rowodbl}
+$v$            & Prędkość fali w ośrodku & \textbf{m/s}         & Odbicie/załamanie \\
+\rowcolor{rowodbl}
+$\theta_1$     & Kąt padania      & \textbf{° lub rad}          & Odbicie/załamanie \\
+\rowcolor{rowodbl}
+$\theta_r$     & Kąt odbicia      & \textbf{° lub rad}          & Odbicie/załamanie \\
+\rowcolor{rowodbl}
+$\theta_2$     & Kąt załamania    & \textbf{° lub rad}          & Odbicie/załamanie \\
+\rowcolor{rowodbl}
+$\theta_c$     & Kąt graniczny c.w.o. & \textbf{° lub rad}      & Odbicie/załamanie \\
+\rowcolor{rowrozs}
+$\lambda$      & Długość fali     & \textbf{nm lub m}           & Dyspersja, Pryzmat \\
+\rowcolor{rowrozs}
+$\nu$          & Częstotliwość    & \textbf{THz lub Hz}         & Dyspersja, Pryzmat \\
+\rowcolor{rowrozs}
+$V_d$          & Liczba Abbego    & bezwymiarowy                & Dyspersja \\
+\rowcolor{rowrozs}
+$n_d, n_F, n_C$ & Wsp. zał. dla linii spektralnych & bezwymiarowe & Dyspersja \\
+\rowcolor{rowrozs}
+$\varphi$      & Kąt łamiący pryzmatu & \textbf{°}             & Pryzmat \\
+\rowcolor{rowrozs}
+$\delta$       & Kąt odchylenia w pryzmacie & \textbf{°}         & Pryzmat \\
+\rowcolor{rowrozs}
+$\delta_{\min}$ & Minimalny kąt odchylenia & \textbf{°}          & Pryzmat \\
+\rowcolor{rowrozs}
+$n_p$          & Wsp. zał. pryzmatu & bezwymiarowy              & Pryzmat \\
+
+\end{longtable}
+
+\bigskip
+\begin{center}
+  \textbf{Legenda kolorów:}
+  \quad
+  \colorbox{rowfoto}{\strut\ Fotometria\ }
+  \quad
+  \colorbox{rowzwierc}{\strut\ Zwierciadła\ }
+  \quad
+  \colorbox{rowsocz}{\strut\ Soczewki\ }
+  \quad
+  \colorbox{rowodbl}{\strut\ Odbicie/Załamanie\ }
+  \quad
+  \colorbox{rowrozs}{\strut\ Rozszczepienie\ }
+\end{center}
+
+\end{document}
